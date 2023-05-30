@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" href="./style.css"> 
+    <style>
+        .dot {
+            stroke: #000;
+            stroke-width: 0.5;
+        }
+        .dropdown-container {
+            display: flex;
+        }
+        .dropdown-container div {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lab7 - Movies Scatterplot</h1>
+    <div class="dropdown-container">
+        <div>
+            <label for="xSelect">X-axis:</label>
+            <select id="xSelect" onchange="xScatterAxis()">
+                <option value="duration">Duration</option>
+                <option value="aspect_ratio">Aspect Ratio</option>
+                <option value="imdb_score">IMDb Score</option>
+                <option value="budget">Budget</option>
+                <option value="gross">Gross</option>
+                <option value="num_user_for_reviews">Number of Users for Reviews</option>
+                <option value="facenumber_in_poster">Number of Faces in Poster</option>
+                <option value="num_voted_users">Number of Voted Users</option>
+            </select>
+        </div>
+        <div>
+            <label for="ySelect">Y-axis:</label>
+            <select id="ySelect" onchange="yScatterAxis()">
+                <option value="duration">Duration</option>
+                <option value="aspect_ratio">Aspect Ratio</option>
+                <option value="imdb_score">IMDb Score</option>
+                <option value="budget">Budget</option>
+                <option value="gross">Gross</option>
+                <option value="num_user_for_reviews">Number of Users for Reviews</option>
+                <option value="facenumber_in_poster">Number of Faces in Poster</option>
+                <option value="num_voted_users">Number of Voted Users</option>
+            </select>
+        </div>
+        <div>
+            <label for="year">Year Filter:</label>
+            <select id="year" onchange="year()">
+                <option value="Year_All">All</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+            </select>
+        </div>
+    </div>
+    <svg width="800" height="400"></svg>
+    <div id="bar-chart"></div>
+    <script src="./d3-tip.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
