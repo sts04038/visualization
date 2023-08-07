@@ -1,4 +1,4 @@
-# visualization
+# movie-data visualization
 Interactive Visual Comparison
 This project places particular emphasis on filtering, selection, and details on demand aspects of the vis for movies data sets.
 
